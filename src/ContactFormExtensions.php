@@ -198,6 +198,7 @@ class ContactFormExtensions extends Plugin
                 } else {
                     $message->setFrom($e->message->getTo());
                 }
+                $message->setReplyTo($e->message->getTo());
                 $message->setHtmlBody($html);
 
                 // Check if subject is overridden in form
