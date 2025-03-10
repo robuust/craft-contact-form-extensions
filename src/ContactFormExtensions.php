@@ -193,13 +193,12 @@ class ContactFormExtensions extends Plugin
                 // Create the confirmation email
                 $message = new Message();
                 $message->setTo($e->submission->fromEmail);
-                // Get the original to email
-                $toEmail = $e->submission->getTo();
-                if ($toEmail) {
-                    $message->setFrom($e->message->getTo());
+                if (isset(App::mailSettings()->fromEmail)) {
+                    $message->setFrom([Craft::parseEnv(App::mailSettings()->fromEmail) => Craft::parseEnv(App::mailSettings()->fromName)]);
                 } else {
-                    $message->setFrom([App::parseEnv(App::mailSettings()->fromEmail) => App::parseEnv(App::mailSettings()->fromName)]);
+                    $message->setFrom($e->message->getTo());
                 }
+                $message->setReplyTo($e->message->getTo());
                 $message->setHtmlBody($html);
 
                 // Check if subject is overridden in form
