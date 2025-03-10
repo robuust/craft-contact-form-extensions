@@ -4,13 +4,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.3.2] - 2022-06-08
-- Update guzzle version
-- Update Recaptcha function handling
+## [5.0.0] - 2024-07-25
+Craft CMS 5 🎉
 
-## [1.3.1] - 2022-05-04
-- Added Graceful handling of visiting URLs of deleted forms. [#140](https://github.com/hybridinteractive/craft-contact-form-extensions/issues/140)
-- Final preparation for Craft 4
+## [4.2.2] - 2022-11-14
+Fixed an issue where the settings tabs were not showing [#164](https://github.com/hybridinteractive/craft-contact-form-extensions/issues/164)
+
+## [4.2.1] - 2022-11-02
+Fixed an issue where you couldn't update the Recaptcha settings in the Dashboard. [#162](https://github.com/hybridinteractive/craft-contact-form-extensions/issues/162)
+
+## [4.2.0] - 2022-09-12
+Release beta label. Thank you all for helping us test this out so thoroughly! You all rock \m/!
+
+## [4.0.0-beta.3] - 2022-05-16
+There were many updates made for this plugin and cleaned up and adjusted many things. The 4 changes below will need to be updated in the templates in order for everything to work.
+
+```
+message['template'] -> message['confirmationTemplate']
+message['subject'] -> message['confirmationSubject']
+message['recaptchaTemplateOverride'] -> message['disableRecaptcha']
+message['saveSubmissionOverride'] -> message['disableSaveSubmission']
+```
 
 ## [1.3.0] - 2022-04-14
 - Adding ability to override recaptcha on a per form basis. [#108](https://github.com/hybridinteractive/craft-contact-form-extensions/issues/108)
